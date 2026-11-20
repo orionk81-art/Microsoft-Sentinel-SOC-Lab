@@ -1,0 +1,10 @@
+[
+  {"time":"2026-11-20T14:00:00Z","event_id":4625,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:00:30Z","event_id":4625,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:01:00Z","event_id":4625,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:01:30Z","event_id":4625,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:02:00Z","event_id":4625,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:02:30Z","event_id":4624,"account":"lab-user","source_ip":"192.0.2.10","logon_type":3},
+  {"time":"2026-11-20T14:04:00Z","event_id":4624,"account":"rdp-test","source_ip":"198.51.100.25","logon_type":10},
+  {"time":"2026-11-20T14:06:00Z","event_id":4624,"account":"ordinary-user","source_ip":"-","logon_type":2}
+]
