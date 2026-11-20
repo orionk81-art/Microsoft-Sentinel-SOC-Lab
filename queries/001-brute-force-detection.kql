@@ -1,0 +1,31 @@
+
+//
+// Detection Rule 001: Brute-Force Authentication Attempts
+// Platform: Microsoft Sentinel / KQL
+// Data source: Simulated authentication events
+// Detection threshold: 5 or more failed logins
+// Severity: Medium (lab classification)
+//
+
+let SecurityEvents = datatable(
+    TimeGenerated: datetime,
+    Account: string,
+    IPAddress: string,
+    Result: string
+)
+[
+    datetime(2026-11-19 14:00:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:01:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:02:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:03:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:04:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:05:00), "admin", "203.0.113.50", "Failed",
+    datetime(2026-11-19 14:06:00), "jdoe", "198.51.100.20", "Failed",
+    datetime(2026-11-19 14:07:00), "jdoe", "198.51.100.20", "Success"
+];
+SecurityEvents
+| where Result == "Failed"
+| summarize FailedAttempts = count()
+    by Account, IPAddress
+| where FailedAttempts >= 5
+| order by FailedAttempts desc
